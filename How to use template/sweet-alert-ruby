@@ -1,0 +1,42 @@
+Bismillah
+
+1. copykan css/js sweetalert ke vendor/assets
+2. panggil di manifest.js
+3. panggil di assets.rb
+4. setting di routenya
+   get 'category/delete/:id', to: 'category#destroy', as: 'category_delete'
+5. setting di viewnya
+   ex-link: <%= link_to "delete", "javascript:;", {
+                :class => "badge badge-pill badge-danger btn-delete",
+                :data => { :id =>  category_delete_path(c)}} 
+             %>
+   ex-js: 
+   $(document).ready(function(){
+
+        $('.btn-delete').on('click', function() {
+            
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#1aae6f',
+                cancelButtonColor: '#f80031',
+                confirmButtonText: 'Yes, delete it!',
+                cancelButtonText: 'No, cancel'
+            }).then((result) => {
+                if (result.value) {
+                    var data = $(this).data('id')
+                    window.location = data;
+                }else{
+                    Swal.fire(
+                    'Cancelled!',
+                    'Your file has been cancel.',
+                    'error'
+                    )
+                }
+            })
+        
+        })
+
+    })

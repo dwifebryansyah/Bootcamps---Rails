@@ -1,0 +1,24 @@
+
+add bootstrap to rails anjeenggg
+
+0. yarn add bootstrap jquery popper.js
+1. nano config/webpack/environment.js
+2. const webpack = require("webpack") 
+
+environment.plugins.append("Provide", new webpack.ProvidePlugin({ 
+  $: 'jquery',
+  jQuery: 'jquery',
+  Popper: ['popper.js', 'default']
+}))
+
+3. nano app/javascript/packs/application.js
+4. import "bootstrap"
+import "../stylesheets/application"
+5. mkdir app/javascript/stylesheets
+6. nano app/javascript/stylesheets/application.scss
+7. @import "~bootstrap/scss/bootstrap";
+8. ke gemfile masukkin:
+	gem 'bootstrap', '~> 4.4.1'
+	gem 'jquery-rails'
+9. ketik bundle
+10. Ketik gem list => cara mengecek bundle

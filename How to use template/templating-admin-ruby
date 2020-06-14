@@ -1,0 +1,18 @@
+Goess to Singapoe
+
+1. setting route
+   namespace :admin do
+    resources blablabla
+   end
+2. cd app/controllers
+3. mkdir admin
+4. pindahin controller yg terpilih ke dlm folder admin
+5. pilih controllernya terus setting
+   Admin::NamaController
+6. setting asset argonnya 
+7. cd app/javascript/stylesheets
+8. nano application.scss
+   @import "./argon-dashboard.scss";
+9. setting elementny
+10 setting categorynya yg udah di masukin ke admin
+11. layout 'element/adminMain'

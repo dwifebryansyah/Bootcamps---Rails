@@ -1,0 +1,22 @@
+GASKEEENNN
+
+1. cd vendor
+2. mkdir assets
+3. cd assets
+4. mkdir javascripts
+5. mkdir stylesheets
+6. cd ../..
+7. cd config/initializers
+8. nano assets.rb
+9. Rails.application.config.assets.precompile = ["manifest.js"]
+10. di vscode masuk ke manifest.js
+11. tinggal masukin css/jsnya
+   ex: //= link custom.js
+       //= link custom.css
+12. di vscode masuk ke application.html.erb
+13. untuk:
+    css: <%= javascript_include_tag 'custom', media: 'all', 'data-turbolinks-track': 'reload' %>
+    js : <%= stylesheet_link_tag 'custom', media: 'all', 'data-turbolinks-track': 'reload' %>
+14. dah lah anjeng
+
+
